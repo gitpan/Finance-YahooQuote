@@ -30,3 +30,6 @@ Version    Date       Changes
 		      Ask Bjoern Hansen <ask@valueclick.com>!
    0.16  17-APR-2000  Added a pointer to Dirk Eddelbüttel's Show Me The Money
 		      program.
+   0.17  24-APR-2000  Replaced parsing code with Text::ParseWords, to fix a
+		      small problem with foreign markets.  Thanks, Dirk, for
+		      pointing out the library!

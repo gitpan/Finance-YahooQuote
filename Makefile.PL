@@ -22,9 +22,10 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
 	'NAME'		=> 'Finance::YahooQuote',
-	'VERSION'	=> '0.16',
+	'VERSION'	=> '0.17',
 	'PREREQ_PM'     => { "LWP::UserAgent"	=> 1.62,
 			     "HTTP::Request"	=> 1.23,
-			     "HTML::Parser"	=> 2.20 },
+			     "HTML::Parser"	=> 2.20,
+			     "Text::ParseWords" => 3.1 },
 	'dist'		=> { COMPRESS => 'gzip', SUFFIX => '.gz', },
     );

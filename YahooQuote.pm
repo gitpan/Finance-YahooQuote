@@ -26,8 +26,9 @@ use vars qw($VERSION @EXPORT @ISA $QURL $TIMEOUT);
 
 use LWP::UserAgent;
 use HTTP::Request::Common;
+use Text::ParseWords;
 
-$VERSION = '0.16';
+$VERSION = '0.17';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1x&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
@@ -44,7 +45,7 @@ sub getquote {
     $ua->timeout($TIMEOUT) if defined $TIMEOUT;
     $ua->env_proxy();
     foreach (split('\015?\012',$ua->request(GET $url)->content)) {
-	@q = grep { s/^"?(.*?)\s*"?\s*$/$1/; } split(',');
+	@q = quotewords(',',0,$_);
 	push(@qr,[@q]);
     }
     return wantarray() ? @qr : \@qr;
