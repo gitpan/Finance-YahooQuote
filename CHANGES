@@ -12,3 +12,6 @@ Version    Date       Changes
    0.07  17-MAR-1999  Fixed a bug that was causing Macs to get a LF at the end
 		      of each quote.  Thanks to Jim Miner <jfm@winternet.com>
    0.08  20-MAR-1999  Re-fix of the same bug in 0.07.  Thanks again, Jim!
+   0.09  22-MAR-1999  Added the exchange to the returned array.  See the man
+		      page for more info.  Thanks to Dirk Eddelbuettel
+		      <edd@debian.org>

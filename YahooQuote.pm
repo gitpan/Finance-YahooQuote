@@ -28,7 +28,7 @@ use LWP::UserAgent;
 use HTTP::Request::Common;
 
 $VERSION = '0.08';
-$QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1&s=");
+$QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1x&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
 
@@ -99,6 +99,7 @@ the following elements:
     18 Dividend per Share
     19 Dividend Yield
     20 Market Capitalization
+    21 Stock Exchange
 
 The B<getquote> function returns an array of pointers to arrays with
 the above structure.
