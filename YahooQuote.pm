@@ -27,7 +27,7 @@ use vars qw($VERSION @EXPORT @ISA $QURL $TIMEOUT);
 use LWP::UserAgent;
 use HTTP::Request::Common;
 
-$VERSION = '0.15';
+$VERSION = '0.16';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1x&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
@@ -152,7 +152,13 @@ information.
 
 Dj Padzensky (C<djpadz@padz.net>), PadzNet, Inc.
 
+=head1 SEE ALSO
+
 The Finance::YahooQuote home page can be found at
 http://www.padz.net/~djpadz/YahooQuote/
+
+Show Me The Money, a derivative work by Dirk Eddelbüttel, that
+uses Finance::YahooQuote in a graphical environment, can be found
+at http://rosebud.sps.queensu.ca/~edd/code/smtm.html.
 
 =cut
