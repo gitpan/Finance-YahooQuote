@@ -27,7 +27,7 @@ use vars qw($VERSION @EXPORT @ISA $QURL);
 use LWP::UserAgent;
 use HTTP::Request::Common;
 
-$VERSION = '0.07';
+$VERSION = '0.08';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
@@ -40,7 +40,7 @@ sub getquote {
     $url = $QURL."@symbols";
     $" = $x;
     $ua = LWP::UserAgent->new;
-    foreach (split('\r?\n',$ua->request(GET $url)->content)) {
+    foreach (split('\015?\012',$ua->request(GET $url)->content)) {
 	@q = grep { s/^"?(.*?)\s*"?\s*$/$1/; } split(',');
 	push(@qr,[@q]);
     }
