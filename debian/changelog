@@ -1,3 +1,12 @@
+finance-yahooquote (0.19) unstable; urgency=low
+
+  * test.pl: Removed, two simple tests are actually in t/
+  * debian/control: Section changed to perl
+  * debian/control: Standards-Version upgraded to 3.5.9
+  * debian/control: Added libwww-perl to Build-Depends-Indep (Closes: #189708)
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Sat, 19 Apr 2003 17:18:39 -0500
+
 finance-yahooquote (0.18) unstable; urgency=low
 
   * First release as upstream co-maintainer

@@ -1,3 +1,12 @@
+finance-yahooquote (0.19) unstable; urgency=low
+
+  * test.pl: Removed, two simple tests are actually in t/
+  * debian/control: Section changed to perl
+  * debian/control: Standards-Version upgraded to 3.5.9
+  * debian/control: Added libwww-perl to Build-Depends-Indep (Closes: #189708)
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Sat, 19 Apr 2003 17:18:39 -0500
+
 finance-yahooquote (0.18) unstable; urgency=low
 
   * First release as upstream co-maintainer
@@ -21,7 +30,7 @@ finance-yahooquote (0.18) unstable; urgency=low
     - examples/symbol_alias.sh: New script to find aliases for numeric
       (i.e. cusip-like) stock symbols.
 
- -- Dirk Eddelbuettel <edd@debian.org>  Tue, 24 Dec 2002 11:51:03 -0600
+ -- Dirk Eddelbuettel <edd@debian.org>  Wed, 25 Dec 2002 09:18:32 -0600
 
 finance-yahooquote (0.17-3) unstable; urgency=low
 

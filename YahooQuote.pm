@@ -1,7 +1,7 @@
 # perl -w
 #
 #    Copyright (C) 1998-2002, Dj Padzensky <djpadz@padz.net>
-#    Copyright (C) 2002 Dirk Eddelbuettel <edd@debian.org>
+#    Copyright (C) 2002-2003  Dirk Eddelbuettel <edd@debian.org>
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #
-# $Id: YahooQuote.pm,v 1.3 2002/12/24 17:49:36 edd Exp $
+# $Id: YahooQuote.pm,v 1.4 2003/04/19 22:17:40 edd Exp $
 
 package Finance::YahooQuote;
 require 5.005;
@@ -30,7 +30,7 @@ use vars qw($VERSION @EXPORT @ISA $QURL $TIMEOUT
 use HTTP::Request::Common;
 use Text::ParseWords;
 
-$VERSION = '0.18';
+$VERSION = '0.19';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1x&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
