@@ -1,0 +1,6 @@
+GNU-LICENSE
+MANIFEST
+Makefile.PL
+README
+YahooQuote.pm
+example/quote-test
