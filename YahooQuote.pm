@@ -27,7 +27,7 @@ use vars qw($VERSION @EXPORT @ISA $QURL);
 use LWP::UserAgent;
 use HTTP::Request::Common;
 
-$VERSION = '0.05';
+$VERSION = '0.06';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
@@ -42,11 +42,6 @@ sub getquote {
     $ua = LWP::UserAgent->new;
     foreach (split('\n',$ua->request(GET $url)->content)) {
 	@q = grep { s/^"?(.*?)\s*"?\s*$/$1/; } split(',');
-#	@q = split(',');
-#	foreach(0..$#q) {
-#	    $q[$_] = substr($q[$_],1,length($q[$_])-2) if $q[$_] =~ /^\".*\"$/;
-#	    chop $q[$_] while $q[$_] =~ /\s$/;
-#	}
 	push(@qr,[@q]);
     }
     return wantarray() ? @qr : \@qr;
@@ -58,7 +53,7 @@ sub getquote {
 sub getonequote {
     my @x;
     @x = &getquote($_[0]);
-    return @{$x[0]};
+    return @{$x[0]} if defined @x;
 }
 
 __END__
@@ -100,7 +95,7 @@ the following elements:
     14 52-Week Range
     15 Earnings per Share
     16 P/E Ratio
-    17 Dividend Pay Rate
+    17 Dividend Pay Date
     18 Dividend per Share
     19 Dividend Yield
     20 Market Capitalization

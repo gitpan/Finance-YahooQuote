@@ -7,3 +7,5 @@ Version    Date       Changes
    0.05  26-OCT-1998  Stripped the trailing ^M from market cap and
 		      tightened up the parsing code.  Thanks to
 		      Jim Hulsey <jhulsey@genomesystems.com>
+   0.06  21-DEC-1998  Fixed a bug in getonequote that caused a choke when
+		      the query failed.  Thanks to Ralph Sobek <sobek@irit.fr>
