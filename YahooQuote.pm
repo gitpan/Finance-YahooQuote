@@ -27,7 +27,7 @@ use vars qw($VERSION @EXPORT @ISA $QURL);
 use LWP::UserAgent;
 use HTTP::Request::Common;
 
-$VERSION = '0.04';
+$VERSION = '0.05';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
@@ -41,15 +41,15 @@ sub getquote {
     $" = $x;
     $ua = LWP::UserAgent->new;
     foreach (split('\n',$ua->request(GET $url)->content)) {
-	chomp;
-	@q = split(',');
-	foreach(0..$#q) {
-	    $q[$_] = substr($q[$_],1,length($q[$_])-2) if $q[$_] =~ /^\".*\"$/;
-	    chop $q[$_] while $q[$_] =~ / $/;
-	}
+	@q = grep { s/^"?(.*?)\s*"?\s*$/$1/; } split(',');
+#	@q = split(',');
+#	foreach(0..$#q) {
+#	    $q[$_] = substr($q[$_],1,length($q[$_])-2) if $q[$_] =~ /^\".*\"$/;
+#	    chop $q[$_] while $q[$_] =~ /\s$/;
+#	}
 	push(@qr,[@q]);
     }
-    return @qr;
+    return wantarray() ? @qr : \@qr;
 }
 
 # Input: A single stock symbol

@@ -4,3 +4,6 @@ Version    Date       Changes
    0.02  06-OCT-1998  Fixed some archive problems; added CHANGES file
    0.03  06-OCT-1998  Added home page to man page
    0.04  11-OCT-1998  Fixed a problem that was causing getonequote not to work
+   0.05  26-OCT-1998  Stripped the trailing ^M from market cap and
+		      tightened up the parsing code.  Thanks to
+		      Jim Hulsey <jhulsey@genomesystems.com>

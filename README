@@ -1,4 +1,4 @@
-Finance::YahooQuote version 0.04
+README for Finance::YahooQuote
 
 This is a perl 5 module that will pull one or more stock quotes from
 Yahoo! Finance.
