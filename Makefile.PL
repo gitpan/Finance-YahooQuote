@@ -1,6 +1,7 @@
 # Makefile for Yahoo.pm
 #
-#    Copyright (C) 1998 Dj Padzensky <djpadz@padz.net>
+#    Copyright (C) 1998, 1999, 2000 Dj Padzensky <djpadz@padz.net>
+#    Copyright (C) 2002 Dirk Eddelbuettel <edd@debian.org>
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -17,15 +18,19 @@
 #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #
 
-require 5.002;
+require 5.005;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-	'NAME'		=> 'Finance::YahooQuote',
-	'VERSION'	=> '0.17',
-	'PREREQ_PM'     => { "LWP::UserAgent"	=> 1.62,
-			     "HTTP::Request"	=> 1.23,
-			     "HTML::Parser"	=> 2.20,
-			     "Text::ParseWords" => 3.1 },
-	'dist'		=> { COMPRESS => 'gzip', SUFFIX => '.gz', },
-    );
+	      'NAME'		=> 'Finance::YahooQuote',
+	      'VERSION_FROM'    => 'YahooQuote.pm',
+	      'PREREQ_PM'	=> { "LWP::UserAgent"	=> 1.62,
+				     "HTTP::Request"	=> 1.23,
+				     "HTML::Parser"	=> 2.20,
+				     "Text::ParseWords" => 3.1 },
+	      'ABSTRACT'   	=> 'Gets stock quotes from Yahoo! Finance',
+	      'AUTHOR'        	=> 'Dirk Eddelbuettel (edd@debian.org)',
+	      'EXE_FILES'       => ['yahooquote'],
+	      'dist'		=> { COMPRESS => 'gzip', 
+				     SUFFIX => '.gz', },
+	     );
