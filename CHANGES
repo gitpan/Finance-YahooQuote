@@ -15,3 +15,4 @@ Version    Date       Changes
    0.09  22-MAR-1999  Added the exchange to the returned array.  See the man
 		      page for more info.  Thanks to Dirk Eddelbuettel
 		      <edd@debian.org>
+   0.10  23-MAR-1999  Added dependencies to Makefile.PL.  Thanks again, Dirk!

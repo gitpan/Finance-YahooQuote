@@ -27,7 +27,7 @@ use vars qw($VERSION @EXPORT @ISA $QURL);
 use LWP::UserAgent;
 use HTTP::Request::Common;
 
-$VERSION = '0.08';
+$VERSION = '0.10';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1x&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
