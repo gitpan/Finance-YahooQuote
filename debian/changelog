@@ -1,3 +1,29 @@
+finance-yahooquote (0.20) unstable; urgency=low
+
+  * YahooQuote.pm: Several changes bases on an excellent patch by Jay Strauss
+    - makes much more extended set of query symbols available
+    - new function getcustomquote() to specify symbols per call
+    - new function setQueryString() to supply new query string
+    - new functions useExtendedQueryFormat() and useRealtimeQueryFormat()
+      as simpler wrappers to make new functionality available
+    - getquote() remains backwards-compatible
+    - internal switch to retrieve in batches of 199 if more symbols are
+      supplied in order to circumvent a restricton at Yahoo's end
+    - added new regression test cases for the new functions
+    - added some documentation for new functions
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Mon, 30 Jun 2003 21:37:31 -0500
+
+finance-yahooquote (0.19.1) unstable; urgency=low
+
+  * Debian-only bugfix release without any new code
+  * debian/rules: Precede 'make test' with 'fping finance.yahoo.com && '
+    to satisfy the somewhat silly autobuilding bug report (Closes: #197452)
+  * debian/control: Added fping to Build-Indep-Depends
+  * debian/control: Increased Standards-Version to 3.5.10
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Mon, 16 Jun 2003 21:08:50 -0500
+
 finance-yahooquote (0.19) unstable; urgency=low
 
   * test.pl: Removed, two simple tests are actually in t/
