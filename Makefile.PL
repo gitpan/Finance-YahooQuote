@@ -22,7 +22,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
 	'NAME'		=> 'Finance::YahooQuote',
-	'VERSION'	=> '0.10',
+	'VERSION'	=> '0.11',
 	'PREREQ_PM'     => { "LWP::UserAgent"	=> 1.62,
 			     "HTTP::Request"	=> 1.23,
 			     "HTML::Parser"	=> 2.20 },

@@ -16,3 +16,4 @@ Version    Date       Changes
 		      page for more info.  Thanks to Dirk Eddelbuettel
 		      <edd@debian.org>
    0.10  23-MAR-1999  Added dependencies to Makefile.PL.  Thanks again, Dirk!
+   0.11  23-MAR-1999  Added the FAQ section to the manpage.

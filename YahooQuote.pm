@@ -27,7 +27,7 @@ use vars qw($VERSION @EXPORT @ISA $QURL);
 use LWP::UserAgent;
 use HTTP::Request::Common;
 
-$VERSION = '0.10';
+$VERSION = '0.11';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1x&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
@@ -103,6 +103,29 @@ the following elements:
 
 The B<getquote> function returns an array of pointers to arrays with
 the above structure.
+
+=head1 FAQ
+
+If there's one question I get asked over and over again, it's how did
+I figure out the format string?  Having typed the answer in
+innumerable emails, I figure sticking it directly into the man page
+might help save my fingers a bit...
+
+If you have a My Yahoo! (http://my.yahoo.com) account, go to the
+following URL:
+
+    http://edit.my.yahoo.com/config/edit_pfview?.vk=v1
+
+Viewing the source of this page, you'll come across the section that
+defines the menus that let you select which elements go into a
+particular view.  The <option> values are the strings that pick up
+the information described in the menu item.  For example, Symbol
+refers to the string "s" and name refers to the string "l".  Using
+"sl" as the format string, we would get the symbol followed by the
+name of the security.
+
+If you have questions regarding this, play around with $QURL, changing
+the value of the f parameter.
 
 =head1 COPYRIGHT
 
