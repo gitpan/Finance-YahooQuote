@@ -27,7 +27,7 @@ use vars qw($VERSION @EXPORT @ISA $QURL $TIMEOUT);
 use LWP::UserAgent;
 use HTTP::Request::Common;
 
-$VERSION = '0.13';
+$VERSION = '0.14';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1x&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
@@ -56,7 +56,7 @@ sub getquote {
 sub getonequote {
     my @x;
     @x = &getquote($_[0]);
-    return @{$x[0]} if defined @x;
+    return wantarray() ? @{$x[0]} : \@{$x[0]} if @x;
 }
 
 1;
