@@ -1,6 +1,6 @@
 # perl -w
 #
-#    Copyright (C) 1998, Dj Padzensky <djpadz@padz.net>
+#    Copyright (C) 1998-2000, Dj Padzensky <djpadz@padz.net>
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ use vars qw($VERSION @EXPORT @ISA $QURL);
 use LWP::UserAgent;
 use HTTP::Request::Common;
 
-$VERSION = '0.11';
+$VERSION = '0.12';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1x&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
@@ -40,6 +40,7 @@ sub getquote {
     $url = $QURL."@symbols";
     $" = $x;
     $ua = LWP::UserAgent->new;
+    $ua->env_proxy();
     foreach (split('\015?\012',$ua->request(GET $url)->content)) {
 	@q = grep { s/^"?(.*?)\s*"?\s*$/$1/; } split(',');
 	push(@qr,[@q]);
