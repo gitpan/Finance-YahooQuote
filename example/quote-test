@@ -9,6 +9,7 @@ die "Usage: $0 symbol [symbol ...]" if $#ARGV == -1;
 	"Day's Range","52-Week Range","EPS","P/E Ratio","Div. Pay Rate",
 	"Div/Share","Div. Yield","Mkt. Cap","Exchange"  );
 
+$Finance::YahooQuote::TIMEOUT = 30;
 @q = getquote(@ARGV);
 
 foreach $a (@q) {

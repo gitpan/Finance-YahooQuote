@@ -22,15 +22,16 @@ require 5.000;
 
 require Exporter;
 use strict;
-use vars qw($VERSION @EXPORT @ISA $QURL);
+use vars qw($VERSION @EXPORT @ISA $QURL $TIMEOUT);
 
 use LWP::UserAgent;
 use HTTP::Request::Common;
 
-$VERSION = '0.12';
+$VERSION = '0.13';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1x&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
+undef $TIMEOUT;
 
 sub getquote {
     my @symbols = @_;
@@ -40,6 +41,7 @@ sub getquote {
     $url = $QURL."@symbols";
     $" = $x;
     $ua = LWP::UserAgent->new;
+    $ua->timeout($TIMEOUT) if defined $TIMEOUT;
     $ua->env_proxy();
     foreach (split('\015?\012',$ua->request(GET $url)->content)) {
 	@q = grep { s/^"?(.*?)\s*"?\s*$/$1/; } split(',');
@@ -57,9 +59,9 @@ sub getonequote {
     return @{$x[0]} if defined @x;
 }
 
-__END__
-
 1;
+
+__END__
 
 =head1 NAME
 
@@ -68,6 +70,7 @@ Finance::YahooQuote - Get a stock quote from Yahoo!
 =head1 SYNOPSIS
 
   use Finance::YahooQuote;
+  $Finance::YahooQuote::TIMEOUT = 60;
   @quote = getonequote $symbol;	# Get a quote for a single symbol
   @quotes = getquote @symbols;	# Get quotes for a bunch of symbols
 
@@ -104,6 +107,9 @@ the following elements:
 
 The B<getquote> function returns an array of pointers to arrays with
 the above structure.
+
+You may optionally override the default LWP timeout of 180 seconds by setting
+$Finance::YahooQuote::TIMEOUT to your preferred value.
 
 =head1 FAQ
 
