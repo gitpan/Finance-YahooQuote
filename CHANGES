@@ -26,3 +26,5 @@ Version    Date       Changes
 		      PERL 5.6.  Thanks Bjoern Hansen <ask@valueclick.com>!
 		      Also, added a wantarray() check in getonequote, to make
 		      it consistent with getquote.
+   0.15  24-MAR-2000  Whoops...  That would be
+		      Ask Bjoern Hansen <ask@valueclick.com>!
