@@ -9,3 +9,5 @@ Version    Date       Changes
 		      Jim Hulsey <jhulsey@genomesystems.com>
    0.06  21-DEC-1998  Fixed a bug in getonequote that caused a choke when
 		      the query failed.  Thanks to Ralph Sobek <sobek@irit.fr>
+   0.07  17-MAR-1999  Fixed a bug that was causing Macs to get a LF at the end
+		      of each quote.  Thanks to Jim Miner <jfm@winternet.com>
