@@ -27,7 +27,7 @@ use vars qw($VERSION @EXPORT @ISA $QURL);
 use LWP::UserAgent;
 use HTTP::Request::Common;
 
-$VERSION = '0.01';
+$VERSION = '0.03';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
@@ -111,7 +111,7 @@ the above structure.
 
 =head1 COPYRIGHT
 
-Copyright 1998, Dj Padzensky (C<djpadz@padz.net>)
+Copyright 1998, Dj Padzensky
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -122,5 +122,12 @@ The information that you obtain with this library may be copyrighted
 by Yahoo! Inc., and is governed by their usage license.  See
 http://www.yahoo.com/docs/info/gen_disclaimer.html for more
 information.
+
+=head1 AUTHOR
+
+Dj Padzensky (C<djpadz@padz.net>), PadzNet, Inc.
+
+The Finance::YahooQuote home page can be found at
+http://www.padz.net/~djpadz/YahooQuote/
 
 =cut
