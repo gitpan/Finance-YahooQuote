@@ -27,7 +27,7 @@ use vars qw($VERSION @EXPORT @ISA $QURL);
 use LWP::UserAgent;
 use HTTP::Request::Common;
 
-$VERSION = '0.03';
+$VERSION = '0.04';
 $QURL = ("http://quote.yahoo.com/d?f=snl1d1t1c1p2va2bapomwerr1dyj1&s=");
 @ISA = qw(Exporter);
 @EXPORT = qw(&getquote &getonequote);
@@ -56,9 +56,8 @@ sub getquote {
 # Output: An array, containing the list elements mentioned above.
 
 sub getonequote {
-    my $symbol = @_;
     my @x;
-    @x = &getquote($symbol);
+    @x = &getquote($_[0]);
     return @{$x[0]};
 }
 
