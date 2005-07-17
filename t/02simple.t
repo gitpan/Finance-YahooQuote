@@ -5,9 +5,10 @@ print "1..$tests\n";
 use Finance::YahooQuote;
 $Finance::YahooQuote::TIMEOUT = 60;
 
-@quote = getonequote "IBM"; 
+@quote = getonequote "IBM";
 
-print "ok 1\n" if $quote[1] eq "INTL BUS MACHINE";
+print "ok 1\n" if $quote[1] eq "INTL BUS MACHINE" 
+  or $quote[1] eq "INTL BUSINESS MAC";
 
 $arrptr = getquote("IBM");
 @array = @{$arrptr->[0]};

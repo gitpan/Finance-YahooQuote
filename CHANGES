@@ -1,3 +1,15 @@
+finance-yahooquote (0.21) unstable; urgency=low
+
+  * t/02simple.t:Updated test for returned company name for symbol 'IBM' to 
+    recognise the text currently returned by Yahoo! (Thanks, Paul Woods!)
+  * MANIFEST: Finally added files in t/ and examples/ directory, also 
+    added CHANGES (which is now a link to debian/changelog)
+  * Make CRAN release via a proper 'make dist' and upload that tarball to CRAN;
+    Debian continues to get the normal source tarball incl. all of debian/
+  * YahooQuote.pm: Note that currency support is mostly broken at Yahoo!'s end.
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Sun, 17 Jul 2005 13:03:24 -0500
+
 finance-yahooquote (0.20) unstable; urgency=low
 
   * YahooQuote.pm: Several changes bases on an excellent patch by Jay Strauss

@@ -1,0 +1,14 @@
+# http://module-build.sourceforge.net/META-spec.html
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         Finance-YahooQuote
+version:      0.21
+version_from: YahooQuote.pm
+installdirs:  site
+requires:
+    HTML::Parser:                  2.2
+    HTTP::Request:                 1.23
+    LWP::UserAgent:                1.62
+    Text::ParseWords:              3.1
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.17

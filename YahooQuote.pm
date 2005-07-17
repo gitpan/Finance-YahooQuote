@@ -17,7 +17,7 @@
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #
-# $Id: YahooQuote.pm,v 1.7 2003/07/01 02:38:13 edd Exp $
+# $Id: YahooQuote.pm,v 1.7 2003/07/01 02:38:13 edd Exp edd $
 
 package Finance::YahooQuote;
 require 5.005;
@@ -31,7 +31,7 @@ use vars qw($VERSION @EXPORT @ISA
 use HTTP::Request::Common;
 use Text::ParseWords;
 
-$VERSION = '0.20';
+$VERSION = '0.21';
 
 ## these variables govern what type of quote the modules is retrieving
 $QURLbase = "http://quote.yahoo.com/d?f=";
@@ -336,13 +336,14 @@ custom fields supplied in the second array reference. Here the custom
 fields correspond to the 'named' fields of the list below.
 
 Beyond stock quotes, B<Finance::YahooQuote> can also obtain quotes for
-currencies (from the Philadephia exchange), US mutual funds, options
-on US stocks, several precious metals and quite possibly more; see the
-Yahoo! Finance website for full information. B<Finance::YahooQuote>
-can be used for stocks from the USA, Canada, various European
-exchanges, various Asian exchanges (Singapore, Taiwan, HongKong, Kuala
-Lumpur, ...) Australia and New Zealand. It should work for other
-markets supported by Yahoo.
+currencies (from the Philadephia exchange -- however Yahoo! appears to
+have stopped to support the currency symbols in a reliable manner), US
+mutual funds, options on US stocks, several precious metals and quite
+possibly more; see the Yahoo! Finance website for full
+information. B<Finance::YahooQuote> can be used for stocks from the
+USA, Canada, various European exchanges, various Asian exchanges
+(Singapore, Taiwan, HongKong, Kuala Lumpur, ...) Australia and New
+Zealand. It should work for other markets supported by Yahoo.
 
 You may optionally override the default LWP timeout of 180 seconds by setting
 $Finance::YahooQuote::TIMEOUT to your preferred value.
