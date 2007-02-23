@@ -13,4 +13,3 @@ t/04custom.t
 t/05test.t
 examples/examine_server.sh
 examples/symbol_alias.sh
-META.yml                                 Module meta-data (added by MakeMaker)

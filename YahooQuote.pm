@@ -1,7 +1,7 @@
 # perl -w
 #
 #    Copyright (C) 1998-2002, Dj Padzensky <djpadz@padz.net>
-#    Copyright (C) 2002-2003  Dirk Eddelbuettel <edd@debian.org>
+#    Copyright (C) 2002-2007  Dirk Eddelbuettel <edd@debian.org>
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #
-# $Id: YahooQuote.pm,v 1.7 2003/07/01 02:38:13 edd Exp edd $
+# $Id: YahooQuote.pm,v 1.9 2007/02/23 02:53:57 edd Exp $
 
 package Finance::YahooQuote;
 require 5.005;
@@ -31,10 +31,10 @@ use vars qw($VERSION @EXPORT @ISA
 use HTTP::Request::Common;
 use Text::ParseWords;
 
-$VERSION = '0.21';
+$VERSION = '0.22';
 
 ## these variables govern what type of quote the modules is retrieving
-$QURLbase = "http://quote.yahoo.com/d?f=";
+$QURLbase = "http://download.finance.yahoo.com/d/quotes.csvr?e=.csv&f=";
 $QURLformat = "snl1d1t1c1p2va2bapomwerr1dyj1x";	# default up to 0.19
 $QURLextended = "s7t8e7e8e9r6r7r5b4p6p5j4m3m4";	# new in 0.20
 $QURLrealtime = "b2b3k2k1c6m2j3"; # also new in 0.20
@@ -482,8 +482,8 @@ as e.g. from 555750.F to DTEGN.F for Deutsche Telekom.
 
 =head1 COPYRIGHT
 
-Copyright 1998, 1999, 2000, 2001, 2002 Dj Padzensky
-Copyright 2002, 2003 Dirk Eddelbuettel
+Copyright 1998 - 2002 Dj Padzensky
+Copyright 2002 - 2007 Dirk Eddelbuettel
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
