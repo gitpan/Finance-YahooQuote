@@ -1,3 +1,9 @@
+finance-yahooquote (0.23) unstable; urgency=medium with 
+
+  * New upstream version with a lame fix for one of the 
+    regression tests: Yahoo! now sends a different name
+    back for IBM. That'all.
+
 finance-yahooquote (0.22) unstable; urgency=medium with 
 
   * New upstream version with a semi-urgent fix for the change in
