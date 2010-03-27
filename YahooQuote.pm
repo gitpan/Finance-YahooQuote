@@ -17,7 +17,7 @@
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #
-# $Id: YahooQuote.pm,v 1.10 2010/03/26 02:45:30 edd Exp $
+# $Id: YahooQuote.pm,v 1.11 2010/03/27 00:44:10 edd Exp $
 
 package Finance::YahooQuote;
 require 5.005;
@@ -31,7 +31,7 @@ use vars qw($VERSION @EXPORT @ISA
 use HTTP::Request::Common;
 use Text::ParseWords;
 
-$VERSION = '0.23';
+$VERSION = '0.24';
 
 ## these variables govern what type of quote the modules is retrieving
 $QURLbase = "http://download.finance.yahoo.com/d/quotes.csvr?e=.csv&f=";
